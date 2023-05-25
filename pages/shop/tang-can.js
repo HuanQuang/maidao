@@ -4,7 +4,7 @@ import { data } from '../../util/Jsondata';
 function TangCan() {
     const list = data.filter((item) => item.category === 'Tăng Cân');
     return (
-        <LayoutShop>
+        <LayoutShop props={1}>
             <div className="w-full flex flex-wrap">
                 {list.map((item, i) => {
                     return (

@@ -3,7 +3,7 @@ import Product from '../../components/Product';
 import { data } from '../../util/Jsondata';
 function Shop() {
     return (
-        <LayoutShop>
+        <LayoutShop props={0}>
             <div className="w-full flex flex-wrap">
                 {data.map((item) => {
                     return (

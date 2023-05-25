@@ -4,7 +4,7 @@ import { data } from '../../util/Jsondata';
 function GiamCan() {
     const list = data.filter((item) => item.category === 'Giảm Cân');
     return (
-        <LayoutShop>
+        <LayoutShop props={2}>
             <div className="w-full flex flex-wrap">
                 {list.map((item) => {
                     return (

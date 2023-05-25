@@ -17,13 +17,13 @@ function Messenger() {
         window.fbAsyncInit = function () {
             window.FB.init({
                 xfbml: true,
-                version: 'v16.0',
+                version: 'v17.0',
             });
         };
     }, []);
 
     return (
-        <div id="fb-customerchat" className="fb-customerchat" attribution="setup_tool" page_id="106924415607297"></div>
+        <div id="fb-customerchat" className="fb-customerchat" attribution="biz_inbox" page_id="106924415607297"></div>
     );
 }
 
