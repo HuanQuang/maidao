@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-primary: #018231;
+        /* ... */
+    }
+}
+.active {
+    color: #000000;
+    font-weight: 700;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+li {
+    list-style-type: none;
+    cursor: pointer;
+}
+a {
+    cursor: pointer;
+    text-decoration: none;
+}
+i {
+    cursor: pointer;
+}
+input {
+    outline: none;
+}
+button {
+    outline: none;
+}
+.backgroundBtn {
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fd6e1d), to(#f59000));
+}
+.no-spin::-webkit-outer-spin-button,
+.no-spin::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+.imageHover:hover > .activeImage1 {
+    opacity: 0;
+}
+.imageHover:hover > .activeImage2 {
+    opacity: 100;
+}
+.imageHover:hover > .activePreview {
+    transform: translateY(0);
+}
