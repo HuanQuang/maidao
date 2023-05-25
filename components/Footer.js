@@ -19,6 +19,7 @@ function Footer() {
                     <div className="flex gap-5 mb-2">
                         <Link
                             href={'https://www.facebook.com/profile.php?id=100063915519088'}
+                            aria-label="link to facebook shop"
                             className="border-[1px] text-[#018231] border-solid border-primary rounded-full flex items-center justify-center w-8 h-8"
                         >
                             <FbIcon className={'h-[18px] text-primary'} />
@@ -34,6 +35,7 @@ function Footer() {
                         </div>
                         <Link
                             href={'https://www.youtube.com/@thuoctangcanthuocgiamcanma7074'}
+                            aria-label="link to youtube shop"
                             className="border-[1px] border-solid border-primary rounded-full flex items-center justify-center w-8 h-8"
                         >
                             <YoutubeIcon className={'h-[18px] text-primary'} />

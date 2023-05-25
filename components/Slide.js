@@ -18,7 +18,11 @@ function Slide() {
                     return (
                         <SwiperSlide key={i}>
                             <div className="flex justify-center items-center">
-                                <Image className="max-h-[450px]" src={slide} alt="Tiến Hạnh"></Image>
+                                <Image
+                                    className="max-h-[450px] h-[170px] tablet:h-[346px] laptop:h-[450px]"
+                                    src={slide}
+                                    alt="Tiến Hạnh"
+                                ></Image>
                             </div>
                         </SwiperSlide>
                     );
