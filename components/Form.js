@@ -8,7 +8,9 @@ import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import SpinLoading from './SpinLoading';
 function Form({ state, data, func }) {
+    const [loading, setLoading] = useState(false);
     // validate phone number
     const phoneRegExp = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
     const schema = yup
@@ -69,6 +71,7 @@ function Form({ state, data, func }) {
         });
     };
     const onSubmit = async (value) => {
+        setLoading(true);
         const database = {
             name: `${value.gender} ${value.name}`,
             address: `${value.street}, ${value.ward} - ${value.district} - ${value.province}`,
@@ -82,13 +85,14 @@ function Form({ state, data, func }) {
         };
         try {
             await axios.post('https://maidaoserver.vercel.app/api/order', database).then((res) => {
-                notifySuccess(res.data);
                 handleCloseModal();
+                notifySuccess(res.data);
             });
         } catch (error) {
             notifyError(error);
             console.log(error);
         }
+        setLoading(false);
     };
     return (
         <div
@@ -280,6 +284,7 @@ function Form({ state, data, func }) {
                 </div>
             </div>
             <ToastContainer />
+            {loading && <SpinLoading />}
         </div>
     );
 }
