@@ -87,6 +87,7 @@ function Form({ state, data, func }) {
             await axios.post('https://maidaoserver.vercel.app/api/order', database).then((res) => {
                 handleCloseModal();
                 notifySuccess(res.data);
+                console.log(res.data);
             });
         } catch (error) {
             notifyError(error);
