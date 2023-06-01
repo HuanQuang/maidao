@@ -69,7 +69,7 @@ function Form({ state, data, func }) {
             total: totalPrice,
         };
         try {
-            await axios.post('http://localhost:8000/api/order', database).then((res) => console.log(res));
+            await axios.post('https://maidaoserver.vercel.app/api/order', database).then((res) => console.log(res));
         } catch (error) {
             console.log(error);
         }

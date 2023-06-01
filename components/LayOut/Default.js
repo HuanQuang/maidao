@@ -2,6 +2,7 @@ import Footer from '../Footer';
 import Head from 'next/head';
 import Header from '../Header';
 import Messenger from '../Messenger';
+
 function DefaultLayOut({ children }) {
     return (
         <div>
@@ -25,6 +26,7 @@ function DefaultLayOut({ children }) {
                 <meta property="article:publisher" content="https://www.facebook.com/profile.php?id=100063915519088" />
                 <meta property="og:description" content="Mai Anh Đào - Tăng Giảm Cân Tiến Hạnh Chính Hãng" />
                 <meta property="og:type" content="website"></meta>
+                <link rel="icon" href="../../public/favicon.ico" sizes="any" />
             </Head>
             <Header />
             <div className="max-w-[960px] mx-auto pt-20 bg-[#ffffff]">{children}</div>
