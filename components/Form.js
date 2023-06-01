@@ -6,6 +6,8 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function Form({ state, data, func }) {
     // validate phone number
     const phoneRegExp = /(84|0[3|5|7|8|9])+([0-9]{8})\b/g;
@@ -56,6 +58,16 @@ function Form({ state, data, func }) {
     const handleCloseModal = () => {
         func(false);
     };
+    const notifySuccess = (message) => {
+        toast.success(message, {
+            position: toast.POSITION.TOP_RIGHT,
+        });
+    };
+    const notifyError = (message) => {
+        toast.error(message, {
+            position: toast.POSITION.TOP_RIGHT,
+        });
+    };
     const onSubmit = async (value) => {
         const database = {
             name: `${value.gender} ${value.name}`,
@@ -69,8 +81,12 @@ function Form({ state, data, func }) {
             total: totalPrice,
         };
         try {
-            await axios.post('https://maidaoserver.vercel.app/api/order', database).then((res) => console.log(res));
+            await axios.post('https://maidaoserver.vercel.app/api/order', database).then((res) => {
+                notifySuccess(res.data);
+                handleCloseModal();
+            });
         } catch (error) {
+            notifyError(error);
             console.log(error);
         }
     };
@@ -263,6 +279,7 @@ function Form({ state, data, func }) {
                     </form>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 }
