@@ -282,7 +282,7 @@ function Form({ state, data, func }) {
                     </form>
                 </div>
             </div>
-            <ToastContainer />
+            <ToastContainer autoClose={500} />
             {loading && <SpinLoading />}
         </div>
     );
